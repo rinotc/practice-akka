@@ -1,7 +1,7 @@
 package example1
 
+import akka.actor.typed.Behavior
 import akka.actor.typed.scaladsl.{ActorContext, Behaviors}
-import akka.actor.typed.{ActorRef, ActorSystem, Behavior, Terminated}
 
 // 挨拶を受け取り、応答を返すアクター
 object GreetActor {
