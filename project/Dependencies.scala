@@ -27,7 +27,7 @@ object Dependencies {
       // akkaには新APIとclassic APIがある。新APIを使うようにしている。
       // https://doc.akka.io/docs/akka/current/index-classic.html (classic API)
       val actor   = "com.typesafe.akka" %% "akka-actor-typed"         % Versions.akka
-      val testKit = "com.typesafe.akka" %% "akka-actor-testkit-typed" % Versions.akka % Test
+      val testKit = "com.typesafe.akka" %% "akka-actor-testkit-typed" % Versions.akka
       val slf4j   = "com.typesafe.akka" %% "akka-slf4j"               % Versions.akka
       val stream  = "com.typesafe.akka" %% "akka-stream"              % Versions.akka
       val http    = "com.typesafe.akka" %% "akka-http"                % Versions.akkaHttp
