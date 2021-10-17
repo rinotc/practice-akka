@@ -7,11 +7,10 @@ import akka.actor.typed.scaladsl.{ActorContext, Behaviors}
 object Controller {
   import Protocol._
 
-  def apply(max: Int): Behavior[GreetReply] = Behaviors.receive {
-    (context: ActorContext[GreetReply], message: GreetReply) =>
-      val greetRef: ActorRef[Greet] = context.spawn(GreetActor(), "thread")
-      greetRef ! Greet("message: 0", "user-1", context.self)
-      processing(greetingCounter = 0, max)(context)
+  def apply(max: Int): Behavior[GreetReply] = Behaviors.setup { context: ActorContext[GreetReply] =>
+    val greetRef: ActorRef[Greet] = context.spawn(GreetActor(), "thread")
+    greetRef ! Greet("message: 0", "user-1", context.self)
+    processing(greetingCounter = 0, max)(context)
   }
 
   private def processing(greetingCounter: Int, max: Int)(context: ActorContext[GreetReply]): Behavior[GreetReply] = {
