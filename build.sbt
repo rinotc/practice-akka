@@ -28,3 +28,6 @@ lazy val `akka-actor-1` = (project in file("akka-actor-1"))
 
 lazy val `chatroom` = (project in file("chatroom"))
   .settings(commonSettings)
+
+lazy val `finite-state-machine` = (project in file("finite-state-machine"))
+  .settings(commonSettings)
