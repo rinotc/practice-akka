@@ -2,7 +2,7 @@ import Dependencies._
 
 lazy val commonSettings = Seq(
   version := "1.0",
-  scalaVersion := "2.13.6",
+  scalaVersion := "2.13.8",
   scalacOptions ++= Seq( // https://docs.scala-lang.org/overviews/compiler-options/index.html
     "-feature",          // 明示的に import する必要のある機能を使用した場合、警告と場所を知らせる
     "-deprecation",      // 非推奨のAPIの仕様している場合、警告と場所を知らせる
