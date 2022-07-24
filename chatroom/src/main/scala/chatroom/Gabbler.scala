@@ -11,7 +11,9 @@ object Gabbler {
       case SessionGranted(handle) =>
         handle ! PostMessage("Hello World!")
         Behaviors.same
-      case SessionDenied(reason) => ???
+      case SessionDenied(reason) =>
+        context.log.warn(reason)
+        Behaviors.same
       case MessagePosted(screenName, message) =>
         context.log.info("message has been posted by '{}' : {}", screenName, message)
         Behaviors.stopped
